@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Newsletter Signup</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="text-center">
+    <main class="form-signin w-100 m-auto">
+      <form action="/" method="post">
+        <img class="logo-image" src="image/shop logo.png" alt="" width="100" />
+        <h1 class="h3 my-5 fw-normal">Sign Up to my Newsletter!</h1>
+
+        <input type="text" name="fName" class="top form-control" placeholder="First Name" required autofocus />
+        <input type="text" name="lName" class="middle form-control" placeholder="Last Name" required />
+        <input type="email" name="email" class="bottom form-control" placeholder="Email" required />
+
+        <button class="w-100 btn btn-lg btn-primary my-2" type="submit">Sign Me Up!</button>
+        <p class="my-3 text-muted">&copy; Forever Leather Goods</p>
+      </form>
+    </main>
+  </body>
+</html>
