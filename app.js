@@ -34,7 +34,7 @@ app.post("/", function (req, res) {
 
   const options = {
     method: "POST",
-    auth: "671e0f8b93cde4f0d60f8c7a62689497-us21",
+    auth: "sandor1:671e0f8b93cde4f0d60f8c7a62689497-us21",
   };
 
   const request = https.request(url, options, function (response) {
