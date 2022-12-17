@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const https = require("node:https");
 
 const app = express();
-app.use(express.static("Public"));
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", function (req, res) {
@@ -34,7 +34,7 @@ app.post("/", function (req, res) {
 
   const options = {
     method: "POST",
-    auth: "sandor1:671e0f8b93cde4f0d60f8c7a62689497-us21q",
+    auth: "sandor1:671e0f8b93cde4f0d60f8c7a62689497-us21",
   };
 
   const request = https.request(url, options, function (response) {
@@ -45,7 +45,7 @@ app.post("/", function (req, res) {
     }
 
     response.on("data", function (data) {
-      console.log(JSON.parse(data));
+      // console.log(JSON.parse(data));
     });
   });
 
