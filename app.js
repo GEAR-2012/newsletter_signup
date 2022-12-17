@@ -1,6 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const https = require("node:https");
+const config = require("config");
+
+const myApiKey = config.get("api_key");
+const myListID = config.get("list_id");
 
 const app = express();
 app.use(express.static("public"));
@@ -30,11 +34,11 @@ app.post("/", function (req, res) {
 
   const jsonData = JSON.stringify(data);
 
-  const url = "https://us21.api.mailchimp.com/3.0/lists/0750a8fba9";
+  const url = "https://us21.api.mailchimp.com/3.0/lists/" + myListID;
 
   const options = {
     method: "POST",
-    auth: "sandor1:671e0f8b93cde4f0d60f8c7a62689497-us21",
+    auth: "sandor1:" + myApiKey,
   };
 
   const request = https.request(url, options, function (response) {
