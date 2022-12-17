@@ -1,10 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const https = require("node:https");
-const config = require("config");
-
-const apiKey = config.get("MY_API_TOKEN");
-const listID = config.get("MY_LIST_ID");
 
 const app = express();
 app.use(express.static("public"));
@@ -34,11 +30,11 @@ app.post("/", function (req, res) {
 
   const jsonData = JSON.stringify(data);
 
-  const url = "https://us21.api.mailchimp.com/3.0/lists/" + listID;
+  const url = "https://us21.api.mailchimp.com/3.0/lists/0750a8fba9";
 
   const options = {
     method: "POST",
-    auth: apiKey,
+    auth: "671e0f8b93cde4f0d60f8c7a62689497-us21",
   };
 
   const request = https.request(url, options, function (response) {
@@ -49,7 +45,7 @@ app.post("/", function (req, res) {
     }
 
     response.on("data", function (data) {
-      // console.log(JSON.parse(data));
+      console.log(JSON.parse(data));
     });
   });
 
@@ -64,3 +60,9 @@ app.post("/failure", function (req, res) {
 app.listen(3000, function () {
   console.log("Server is running on port 3000.");
 });
+
+// MY API
+// 671e0f8b93cde4f0d60f8c7a62689497-us21
+
+// MY LIST ID
+// 0750a8fba9
